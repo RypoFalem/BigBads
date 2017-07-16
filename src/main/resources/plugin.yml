@@ -1,0 +1,15 @@
+name: CustomBosses
+description: Adds custom bosses
+author: RypoFalem
+version: 0.1
+main: io.github.rypofalem.custombosses.CustomBossesPlugin
+depend: [ Custom ]
+commands:
+  boss:
+    description: admin commands
+    usage: "/<command> spawn <bossname>"
+    permission: boss.admin
+permissions:
+  boss.admin:
+    description: admin stuff
+    default: OP
