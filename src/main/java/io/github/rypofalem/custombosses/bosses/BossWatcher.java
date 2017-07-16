@@ -29,7 +29,7 @@ public abstract class BossWatcher implements EntityWatcher {
 	protected List<TickableBehavior> behaviors = new ArrayList<>();
 	protected Attack currentAttack;
 	protected long tickcounter = 0;
-	@Setter public LivingEntity target;
+	@Setter protected LivingEntity target;
 
 	protected BossWatcher(CustomEntity customEntity, Entity entity){
 		this.customEntity = customEntity;

@@ -98,7 +98,7 @@ public class EyeOfSpider extends Boss {
 			attackList.add(charge);
 			attackList.add(floatAttack);
 
-			behaviors.add(new CollisionDamage(this, 30));
+			behaviors.add(new CollisionDamage(this, 30, 0));
 		}
 
 		@Override

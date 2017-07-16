@@ -12,7 +12,8 @@ import org.bukkit.entity.Player;
 import java.util.HashMap;
 import java.util.Map;
 
-@Getter @Setter
+@Getter
+@Setter
 public abstract class Attack {
 	int cooldown;
 	int MinDuration;

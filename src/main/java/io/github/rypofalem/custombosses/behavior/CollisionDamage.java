@@ -12,9 +12,9 @@ import org.bukkit.entity.Player;
 @Setter
 @AllArgsConstructor
 public class CollisionDamage implements TickableBehavior{
+	protected final BossWatcher watcher;
 	protected double damage;
 	protected double range = 0;
-	protected final BossWatcher watcher;
 
 	@Override
 	public void onTick(long tickCounter){

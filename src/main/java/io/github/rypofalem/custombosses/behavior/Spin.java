@@ -10,16 +10,18 @@ import org.bukkit.Location;
 @Setter
 @AllArgsConstructor
 public class Spin implements TickableBehavior{
-	final BossWatcher watcher;
-	protected double minSpeed;
-	protected double maxSpeed;
-	protected double acceleration;
-	protected float yaw;
+	protected final BossWatcher watcher;
+	protected float speed;
+	protected float minSpeed;
+	protected float maxSpeed;
+	protected float acceleration;
 
 	@Override
 	public void onTick(long tickCounter) {
+		speed += acceleration;
+		speed = Math.max(minSpeed, Math.min(speed, maxSpeed));
 		Location location = watcher.getEntity().getLocation().clone();
-		location.setYaw(yaw);
+		location.setYaw(location.getYaw() - speed);
 		watcher.getEntity().teleport(location);
 	}
 }
