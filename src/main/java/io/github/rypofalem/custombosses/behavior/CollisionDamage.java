@@ -1,7 +1,7 @@
 package io.github.rypofalem.custombosses.behavior;
 
 
-import io.github.rypofalem.custombosses.bosses.BossWatcher;
+import io.github.rypofalem.custombosses.boss.BossWatcher;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

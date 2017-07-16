@@ -1,4 +1,4 @@
-package io.github.rypofalem.custombosses.bosses;
+package io.github.rypofalem.custombosses.boss;
 
 
 import com.winthier.custom.entity.CustomEntity;

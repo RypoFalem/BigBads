@@ -1,7 +1,7 @@
 package io.github.rypofalem.custombosses.attacks;
 
 
-import io.github.rypofalem.custombosses.bosses.BossWatcher;
+import io.github.rypofalem.custombosses.boss.BossWatcher;
 
 public class Effect extends Attack{
 

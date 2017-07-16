@@ -1,12 +1,12 @@
-package io.github.rypofalem.custombosses.bosses.eyeofthespider;
+package io.github.rypofalem.custombosses.boss.eyeofthespider;
 
 import com.winthier.custom.entity.EntityContext;
 import com.winthier.custom.entity.EntityWatcher;
 import io.github.rypofalem.custombosses.attacks.ChargeAttack;
 import io.github.rypofalem.custombosses.attacks.FloatAttack;
 import io.github.rypofalem.custombosses.behavior.CollisionDamage;
-import io.github.rypofalem.custombosses.bosses.Boss;
-import io.github.rypofalem.custombosses.bosses.BossWatcher;
+import io.github.rypofalem.custombosses.boss.Boss;
+import io.github.rypofalem.custombosses.boss.BossWatcher;
 import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.SoundCategory;

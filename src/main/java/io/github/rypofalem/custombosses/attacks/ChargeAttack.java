@@ -2,12 +2,11 @@ package io.github.rypofalem.custombosses.attacks;
 
 
 import io.github.rypofalem.custombosses.Util;
-import io.github.rypofalem.custombosses.bosses.BossWatcher;
+import io.github.rypofalem.custombosses.boss.BossWatcher;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.*;
 import org.bukkit.entity.Entity;
-import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
 @Getter

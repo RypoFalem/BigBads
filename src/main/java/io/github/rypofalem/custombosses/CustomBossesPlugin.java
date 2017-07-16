@@ -2,7 +2,7 @@ package io.github.rypofalem.custombosses;
 
 
 import com.winthier.custom.event.CustomRegisterEvent;
-import io.github.rypofalem.custombosses.bosses.eyeofthespider.EyeOfSpider;
+import io.github.rypofalem.custombosses.boss.eyeofthespider.EyeOfSpider;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
