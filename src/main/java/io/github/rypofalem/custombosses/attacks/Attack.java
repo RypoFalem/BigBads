@@ -15,14 +15,14 @@ import java.util.Map;
 @Getter
 @Setter
 public abstract class Attack {
-	int cooldown;
-	int MinDuration;
-	int duration;
-	long lastUsed = 0;
-	double damage = 0;
-	double hRange = 32;
-	double vRange = 256;
-	final BossWatcher watcher;
+	protected int cooldown;
+	protected int MinDuration;
+	protected int duration;
+	protected long lastUsed = 0;
+	protected double damage = 0;
+	protected double hRange = 32;
+	protected double vRange = 256;
+	protected final BossWatcher watcher;
 
 	public Attack(BossWatcher watcher, int duration, int cooldown){
 		this.duration = 0;
