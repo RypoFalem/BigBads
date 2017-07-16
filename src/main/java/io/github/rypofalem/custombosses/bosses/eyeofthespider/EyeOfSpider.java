@@ -88,9 +88,7 @@ public class EyeOfSpider extends Boss {
 				}
 			};
 			blindFloat.setHRange(100);
-			charge = new ChargeAttack(this, 1);
-			charge.setSpeed(.5);
-			charge.setMaxCharges(2);
+			charge = new ChargeAttack(this, 1).setSpeed(.5).setMaxCharges(2);
 			charge.setHRange(100);
 			FloatAttack floatAttack = new FloatAttack(this, 100,0);
 			floatAttack.setHRange(100);
