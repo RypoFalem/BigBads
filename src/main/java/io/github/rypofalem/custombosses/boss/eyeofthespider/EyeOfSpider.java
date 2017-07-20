@@ -1,12 +1,17 @@
 package io.github.rypofalem.custombosses.boss.eyeofthespider;
 
+import com.winthier.custom.CustomPlugin;
+import com.winthier.custom.entity.CustomEntity;
 import com.winthier.custom.entity.EntityContext;
 import com.winthier.custom.entity.EntityWatcher;
+import io.github.rypofalem.custombosses.attacks.Attack;
 import io.github.rypofalem.custombosses.attacks.ChargeAttack;
 import io.github.rypofalem.custombosses.attacks.FloatAttack;
+import io.github.rypofalem.custombosses.attacks.SummonEntities;
 import io.github.rypofalem.custombosses.behavior.CollisionDamage;
 import io.github.rypofalem.custombosses.boss.Boss;
 import io.github.rypofalem.custombosses.boss.BossWatcher;
+import io.github.rypofalem.custombosses.boss.Minion;
 import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.SoundCategory;
@@ -29,7 +34,7 @@ public class EyeOfSpider extends Boss {
 	private static final String ID = "custombosses:eyeofthespider";
 	private static final String NAME = "Eye of the Spider";
 	private static final Class type = ElderGuardian.class;
-	private static final double MAXHP = 300;
+	private static final double MAXHP = 1000;
 
 	public EyeOfSpider() {
 		immunities = Arrays.asList(DamageCause.LAVA, DamageCause.HOT_FLOOR, DamageCause.CRAMMING, DamageCause.CONTACT,
@@ -69,21 +74,25 @@ public class EyeOfSpider extends Boss {
 		ChargeAttack charge;
 		BlindFloat blindFloat;
 		FloatAttack floatAttack;
+		SummonEyeMinion summon;
 
 		public Watcher(EyeOfSpider eye, Entity boss) {
 			super(eye, boss);
 
-			blindFloat = new BlindFloat(this, 20 * 9, 15);
+			blindFloat = new BlindFloat(this, 20 * 10, 15);
 			blindFloat.setHRange(100);
 			charge = new ChargeAttack(this, 1).setSpeed(.5).setMaxCharges(2);
 			charge.setHRange(100);
 			floatAttack = new FloatAttack(this, 100, 0);
 			floatAttack.setHRange(100);
-			attackList.add(blindFloat);
-			attackList.add(charge);
-			attackList.add(floatAttack);
+			summon = new SummonEyeMinion(this, 1, 90, 4);
+			attacks.add(summon);
+			attacks.add(blindFloat);
+			attacks.add(charge);
+			attacks.add(floatAttack);
 
 			behaviors.add(new CollisionDamage(this, 30, 0));
+			this.setTarget(floatAttack.getNewTarget());
 		}
 
 		@Override
@@ -121,6 +130,23 @@ public class EyeOfSpider extends Boss {
 						LivingEntity le = (LivingEntity)e;
 						le.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, 40, 1, false, false), true);
 					}
+				}
+			}
+		}
+
+		class SummonEyeMinion extends SummonEntities{
+			public SummonEyeMinion(BossWatcher watcher, int duration, int cooldown, int number) {
+				super(watcher, duration, cooldown, (EyeMinion)CustomPlugin.getInstance().getEntityManager().getCustomEntity(EyeMinion.CUSTOMID), number);
+			}
+
+			@Override
+			public void onTick(long tickCounter){
+				super.onTick(tickCounter);
+				float offset = 0;
+				float incr = 360f / getSummons().length;
+				for(Minion.MinionWatcher minion : getSummons()){
+					((EyeMinion.Watcher)minion).setOffSet(offset);
+					offset += incr;
 				}
 			}
 		}

@@ -22,11 +22,11 @@ import java.util.List;
 
 @Getter
 public abstract class BossWatcher implements EntityWatcher {
-	protected CustomEntity customEntity;
-	protected Entity entity;
+	protected final CustomEntity customEntity;
+	protected final Entity entity;
+	protected final List<Attack> attacks = new ArrayList<>();
+	protected final List<TickableBehavior> behaviors = new ArrayList<>();
 	protected BossBar bossBar;
-	protected List<Attack> attackList = new ArrayList<>();
-	protected List<TickableBehavior> behaviors = new ArrayList<>();
 	protected Attack currentAttack;
 	protected long tickcounter = 0;
 	@Setter protected LivingEntity target;
@@ -86,8 +86,8 @@ public abstract class BossWatcher implements EntityWatcher {
 		bossBar.removeAll();
 	}
 
-	public List<Attack> getAttackList(){
-		return Collections.unmodifiableList(attackList);
+	public List<Attack> getAttacks(){
+		return Collections.unmodifiableList(attacks);
 	}
 
 	protected Attack setAttack(){
@@ -95,8 +95,8 @@ public abstract class BossWatcher implements EntityWatcher {
 			return currentAttack;
 		}
 		if(currentAttack != null) currentAttack.reset();
-		Collections.shuffle(attackList);
-		for(Attack att : attackList){
+		Collections.shuffle(attacks);
+		for(Attack att : attacks){
 			if(att.isCooledDown()){
 				Bukkit.broadcastMessage(att.getClass().getSimpleName());
 				return currentAttack = att;

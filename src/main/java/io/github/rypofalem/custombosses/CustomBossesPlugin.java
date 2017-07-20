@@ -2,6 +2,7 @@ package io.github.rypofalem.custombosses;
 
 
 import com.winthier.custom.event.CustomRegisterEvent;
+import io.github.rypofalem.custombosses.boss.eyeofthespider.EyeMinion;
 import io.github.rypofalem.custombosses.boss.eyeofthespider.EyeOfSpider;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
@@ -19,6 +20,7 @@ public class CustomBossesPlugin extends JavaPlugin implements Listener {
 	@EventHandler
 	public void onCustomRegister(CustomRegisterEvent event) {
 		event.addEntity(new EyeOfSpider());
+		event.addEntity(new EyeMinion());
 	}
 
 }

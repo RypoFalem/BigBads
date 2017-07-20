@@ -1,22 +1,25 @@
 package io.github.rypofalem.custombosses.behavior;
 
+import com.winthier.custom.entity.EntityWatcher;
 import io.github.rypofalem.custombosses.Util;
 import io.github.rypofalem.custombosses.boss.BossWatcher;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.Sound;
 import org.bukkit.SoundCategory;
+import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.Projectile;
 
 import java.util.function.Consumer;
 
 public class ScheduledBehavior implements TickableBehavior{
-	@Getter @Setter protected Consumer<BossWatcher> behavior;
-	@Getter @Setter BossWatcher watcher;
+	@Getter @Setter protected Consumer<EntityWatcher> behavior;
+	@Getter @Setter EntityWatcher watcher;
 	@Getter @Setter protected int frequency;
 	@Getter @Setter protected int variance;
 	protected int schedule;
 
-	ScheduledBehavior(BossWatcher watcher, Consumer<BossWatcher> behavior, int frequency, int variance){
+	ScheduledBehavior(EntityWatcher watcher, Consumer<EntityWatcher> behavior, int frequency, int variance){
 		this.watcher = watcher;
 		this.behavior = behavior;
 		this.frequency = frequency;
@@ -35,7 +38,7 @@ public class ScheduledBehavior implements TickableBehavior{
 		return schedule = Util.random.nextInt(variance*2 + 1) - variance + frequency + (int)tickCounter;
 	}
 
-	public static ScheduledBehavior createScheduledNoise(BossWatcher watcher, int frequency, int variance, Sound sound, SoundCategory category, float volume, float pitch){
+	public static ScheduledBehavior createScheduledNoise(EntityWatcher watcher, int frequency, int variance, Sound sound, SoundCategory category, float volume, float pitch){
 		return new ScheduledBehavior(watcher,
 				futureWatcher -> futureWatcher.getEntity().getLocation().getWorld().playSound(futureWatcher.getEntity().getLocation(), sound, category, 1, 1),
 				frequency, variance);
