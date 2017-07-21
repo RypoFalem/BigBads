@@ -98,7 +98,6 @@ public abstract class BossWatcher implements EntityWatcher {
 		Collections.shuffle(attacks);
 		for(Attack att : attacks){
 			if(att.isCooledDown()){
-				Bukkit.broadcastMessage(att.getClass().getSimpleName());
 				return currentAttack = att;
 			}
 		}

@@ -20,7 +20,7 @@ import java.util.*;
 
 public class EyeMinion implements TickableEntity, Minion {
 	final Class type = Guardian.class;
-	final int MAXHP = 150;
+	final int MAXHP = 15;
 	final String NAME = "Mini Eye";
 	public final static String CUSTOMID = "custombosses:minieye";
 	static final EntityDamageEvent.DamageCause[] IMMUNITIES = {EntityDamageEvent.DamageCause.LAVA, EntityDamageEvent.DamageCause.HOT_FLOOR, EntityDamageEvent.DamageCause.CRAMMING, EntityDamageEvent.DamageCause.CONTACT,

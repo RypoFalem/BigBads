@@ -35,7 +35,7 @@ public class EyeOfSpider extends Boss {
 	private static final String ID = "custombosses:eyeofthespider";
 	private static final String NAME = "Eye of the Spider";
 	private static final Class type = ElderGuardian.class;
-	private static final double MAXHP = 1000;
+	private static final double MAXHP = 500;
 
 	public EyeOfSpider() {
 		immunities = Arrays.asList(DamageCause.LAVA, DamageCause.HOT_FLOOR, DamageCause.CRAMMING, DamageCause.CONTACT,
@@ -83,15 +83,15 @@ public class EyeOfSpider extends Boss {
 			blindFloat.setHRange(100);
 			charge = new ChargeAttack(this, 1).setSpeed(.5).setMaxCharges(2);
 			charge.setHRange(100);
-			floatAttack = new FloatAttack(this, 100, 0);
+			floatAttack = new FloatAttack(this, 60, 0);
 			floatAttack.setHRange(100);
-			summon = new SummonEyeMinion(this, 1, 90, 4);
+			summon = new SummonEyeMinion(this, 1, 120, 4);
 			attacks.add(summon);
-			attacks.add(blindFloat);
+			//attacks.add(blindFloat);
 			attacks.add(charge);
 			attacks.add(floatAttack);
 
-			behaviors.add(new CollisionDamage(this, 30, 0));
+			behaviors.add(new CollisionDamage(this, 50, 0));
 			this.setTarget(floatAttack.getNewTarget());
 		}
 

@@ -16,7 +16,7 @@ public class FloatAttack extends Attack {
 	@Getter @Setter public float rotationSpeed = .1f * 360f / 20f;
 	@Getter @Setter public float minPitch = -60f;
 	@Getter @Setter public float maxPitch = 0f;
-	@Getter @Setter public float acceleration = .015f;
+	@Getter @Setter public float acceleration = .01f;
 	@Getter @Setter public double targetDistance = 2;
 
 	protected final Vector speed = new Vector(0,0,0);
