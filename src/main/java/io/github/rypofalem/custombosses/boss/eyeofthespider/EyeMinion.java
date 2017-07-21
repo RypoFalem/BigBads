@@ -5,6 +5,7 @@ import com.winthier.custom.entity.EntityWatcher;
 import com.winthier.custom.entity.TickableEntity;
 import io.github.rypofalem.custombosses.Util;
 import io.github.rypofalem.custombosses.attacks.Attack;
+import io.github.rypofalem.custombosses.boss.BossWatcher;
 import io.github.rypofalem.custombosses.boss.Minion;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,7 +18,7 @@ import org.bukkit.event.entity.EntityDamageEvent;
 
 import java.util.*;
 
-public class EyeMinion extends Minion implements TickableEntity {
+public class EyeMinion implements TickableEntity, Minion {
 	final Class type = Guardian.class;
 	final int MAXHP = 150;
 	final String NAME = "Mini Eye";
@@ -59,7 +60,7 @@ public class EyeMinion extends Minion implements TickableEntity {
 	}
 
 	@Getter
-	public class Watcher extends MinionWatcher {
+	public class Watcher implements MinionWatcher {
 		protected final List<Attack> attacks = new ArrayList<>();
 		protected final float speed = 1f;
 		protected float yaw = 0;
@@ -68,9 +69,13 @@ public class EyeMinion extends Minion implements TickableEntity {
 		protected double tickCount = 0;
 		protected double schedule;
 		protected Entity target;
+		protected Entity entity;
+		protected CustomEntity customEntity;
+		protected BossWatcher parent = null;
 
 		public Watcher(CustomEntity customEntity, Entity entity) {
-			super(customEntity, entity);
+			this.customEntity = customEntity;
+			this.entity = entity;
 			scheduleNextShot();
 			getNewTarget();
 		}
@@ -114,6 +119,10 @@ public class EyeMinion extends Minion implements TickableEntity {
 				if(e instanceof Player)  targets.put(e,1);
 			}
 			return target = Util.getWeightedRandomChoice(targets);
+		}
+
+		public void setParent(BossWatcher bossWatcher){
+			this.parent = bossWatcher;
 		}
 	}
 }
