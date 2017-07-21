@@ -1,12 +1,12 @@
-package io.github.rypofalem.custombosses.boss.eyeofthespider;
+package io.github.rypofalem.bigbads.boss.eyeofthespider;
 
 import com.winthier.custom.entity.CustomEntity;
 import com.winthier.custom.entity.EntityWatcher;
 import com.winthier.custom.entity.TickableEntity;
-import io.github.rypofalem.custombosses.Util;
-import io.github.rypofalem.custombosses.attacks.Attack;
-import io.github.rypofalem.custombosses.boss.BossWatcher;
-import io.github.rypofalem.custombosses.boss.Minion;
+import io.github.rypofalem.bigbads.Util;
+import io.github.rypofalem.bigbads.attacks.Attack;
+import io.github.rypofalem.bigbads.boss.BossWatcher;
+import io.github.rypofalem.bigbads.boss.Minion;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.Location;
@@ -22,7 +22,7 @@ public class EyeMinion implements TickableEntity, Minion {
 	final Class type = Guardian.class;
 	final int MAXHP = 15;
 	final String NAME = "Mini Eye";
-	public final static String CUSTOMID = "custombosses:minieye";
+	public final static String CUSTOMID = "bigbads:minieye";
 	static final EntityDamageEvent.DamageCause[] IMMUNITIES = {EntityDamageEvent.DamageCause.LAVA, EntityDamageEvent.DamageCause.HOT_FLOOR, EntityDamageEvent.DamageCause.CRAMMING, EntityDamageEvent.DamageCause.CONTACT,
 	EntityDamageEvent.DamageCause.SUFFOCATION, EntityDamageEvent.DamageCause.DROWNING};
 

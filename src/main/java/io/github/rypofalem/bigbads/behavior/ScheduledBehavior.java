@@ -1,14 +1,11 @@
-package io.github.rypofalem.custombosses.behavior;
+package io.github.rypofalem.bigbads.behavior;
 
 import com.winthier.custom.entity.EntityWatcher;
-import io.github.rypofalem.custombosses.Util;
-import io.github.rypofalem.custombosses.boss.BossWatcher;
+import io.github.rypofalem.bigbads.Util;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.Sound;
 import org.bukkit.SoundCategory;
-import org.bukkit.entity.LivingEntity;
-import org.bukkit.entity.Projectile;
 
 import java.util.function.Consumer;
 

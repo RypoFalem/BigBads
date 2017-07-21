@@ -1,4 +1,4 @@
-package io.github.rypofalem.custombosses;
+package io.github.rypofalem.bigbads;
 
 
 import org.bukkit.Location;

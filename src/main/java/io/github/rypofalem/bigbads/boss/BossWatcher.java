@@ -1,10 +1,10 @@
-package io.github.rypofalem.custombosses.boss;
+package io.github.rypofalem.bigbads.boss;
 
 
 import com.winthier.custom.entity.CustomEntity;
 import com.winthier.custom.entity.EntityWatcher;
-import io.github.rypofalem.custombosses.attacks.Attack;
-import io.github.rypofalem.custombosses.behavior.TickableBehavior;
+import io.github.rypofalem.bigbads.attacks.Attack;
+import io.github.rypofalem.bigbads.behavior.TickableBehavior;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.Bukkit;

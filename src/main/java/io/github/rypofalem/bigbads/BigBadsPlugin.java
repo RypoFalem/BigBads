@@ -1,9 +1,9 @@
-package io.github.rypofalem.custombosses;
+package io.github.rypofalem.bigbads;
 
 
 import com.winthier.custom.event.CustomRegisterEvent;
-import io.github.rypofalem.custombosses.boss.eyeofthespider.EyeMinion;
-import io.github.rypofalem.custombosses.boss.eyeofthespider.EyeOfSpider;
+import io.github.rypofalem.bigbads.boss.eyeofthespider.EyeMinion;
+import io.github.rypofalem.bigbads.boss.eyeofthespider.EyeOfSpider;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
@@ -13,8 +13,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerItemDamageEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class CustomBossesPlugin extends JavaPlugin implements Listener {
-	public static CustomBossesPlugin instance;
+public class BigBadsPlugin extends JavaPlugin implements Listener {
+	public static BigBadsPlugin instance;
 	public static boolean dontDamageArmor = false;
 
 	public void onEnable(){

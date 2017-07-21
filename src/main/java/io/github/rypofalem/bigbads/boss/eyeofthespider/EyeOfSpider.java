@@ -1,18 +1,15 @@
-package io.github.rypofalem.custombosses.boss.eyeofthespider;
+package io.github.rypofalem.bigbads.boss.eyeofthespider;
 
 import com.winthier.custom.CustomPlugin;
-import com.winthier.custom.entity.CustomEntity;
 import com.winthier.custom.entity.EntityContext;
 import com.winthier.custom.entity.EntityWatcher;
-import io.github.rypofalem.custombosses.CustomBossesPlugin;
-import io.github.rypofalem.custombosses.attacks.Attack;
-import io.github.rypofalem.custombosses.attacks.ChargeAttack;
-import io.github.rypofalem.custombosses.attacks.FloatAttack;
-import io.github.rypofalem.custombosses.attacks.SummonEntities;
-import io.github.rypofalem.custombosses.behavior.CollisionDamage;
-import io.github.rypofalem.custombosses.boss.Boss;
-import io.github.rypofalem.custombosses.boss.BossWatcher;
-import io.github.rypofalem.custombosses.boss.Minion;
+import io.github.rypofalem.bigbads.attacks.ChargeAttack;
+import io.github.rypofalem.bigbads.attacks.FloatAttack;
+import io.github.rypofalem.bigbads.attacks.SummonEntities;
+import io.github.rypofalem.bigbads.behavior.CollisionDamage;
+import io.github.rypofalem.bigbads.boss.Boss;
+import io.github.rypofalem.bigbads.boss.BossWatcher;
+import io.github.rypofalem.bigbads.boss.Minion;
 import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.SoundCategory;
@@ -32,7 +29,7 @@ import java.util.Arrays;
 
 
 public class EyeOfSpider extends Boss {
-	private static final String ID = "custombosses:eyeofthespider";
+	private static final String ID = "bigbads:eyeofthespider";
 	private static final String NAME = "Eye of the Spider";
 	private static final Class type = ElderGuardian.class;
 	private static final double MAXHP = 500;

@@ -1,13 +1,9 @@
-package io.github.rypofalem.custombosses.attacks;
+package io.github.rypofalem.bigbads.attacks;
 
 import com.winthier.custom.CustomPlugin;
-import com.winthier.custom.entity.EntityWatcher;
-import io.github.rypofalem.custombosses.boss.BossWatcher;
-import io.github.rypofalem.custombosses.boss.Minion;
-import io.github.rypofalem.custombosses.boss.eyeofthespider.EyeMinion;
+import io.github.rypofalem.bigbads.boss.BossWatcher;
+import io.github.rypofalem.bigbads.boss.Minion;
 import lombok.Getter;
-import org.bukkit.Bukkit;
-import org.bukkit.entity.Entity;
 
 @Getter
 public class SummonEntities extends Attack{

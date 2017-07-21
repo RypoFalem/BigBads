@@ -2,7 +2,7 @@ name: CustomBosses
 description: Adds custom bosses
 author: RypoFalem
 version: 0.1
-main: io.github.rypofalem.custombosses.CustomBossesPlugin
+main: io.github.rypofalem.bigbads.BigBadsPlugin
 depend: [ Custom ]
 commands:
   boss:

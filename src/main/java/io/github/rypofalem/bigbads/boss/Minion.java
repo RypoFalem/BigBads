@@ -1,4 +1,4 @@
-package io.github.rypofalem.custombosses.boss;
+package io.github.rypofalem.bigbads.boss;
 
 import com.winthier.custom.entity.CustomEntity;
 import com.winthier.custom.entity.EntityWatcher;

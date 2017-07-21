@@ -1,8 +1,8 @@
-package io.github.rypofalem.custombosses.attacks;
+package io.github.rypofalem.bigbads.attacks;
 
 
-import io.github.rypofalem.custombosses.Util;
-import io.github.rypofalem.custombosses.boss.BossWatcher;
+import io.github.rypofalem.bigbads.Util;
+import io.github.rypofalem.bigbads.boss.BossWatcher;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.entity.Entity;

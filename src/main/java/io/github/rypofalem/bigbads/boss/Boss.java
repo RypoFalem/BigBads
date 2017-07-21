@@ -1,11 +1,11 @@
-package io.github.rypofalem.custombosses.boss;
+package io.github.rypofalem.bigbads.boss;
 
 
 import com.winthier.custom.entity.CustomEntity;
 import com.winthier.custom.entity.EntityContext;
 import com.winthier.custom.entity.EntityWatcher;
 import com.winthier.custom.entity.TickableEntity;
-import io.github.rypofalem.custombosses.CustomBossesPlugin;
+import io.github.rypofalem.bigbads.BigBadsPlugin;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
@@ -34,7 +34,7 @@ public abstract class Boss implements TickableEntity, CustomEntity {
 			}
 		}
 		Bukkit.getScheduler().runTaskLater(
-				CustomBossesPlugin.instance,
+				BigBadsPlugin.instance,
 				() -> ((BossWatcher)context.getEntityWatcher()).onHealthChange(),
 				1);
 	}
