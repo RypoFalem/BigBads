@@ -4,6 +4,7 @@ import com.winthier.custom.CustomPlugin;
 import com.winthier.custom.entity.CustomEntity;
 import com.winthier.custom.entity.EntityContext;
 import com.winthier.custom.entity.EntityWatcher;
+import io.github.rypofalem.custombosses.CustomBossesPlugin;
 import io.github.rypofalem.custombosses.attacks.Attack;
 import io.github.rypofalem.custombosses.attacks.ChargeAttack;
 import io.github.rypofalem.custombosses.attacks.FloatAttack;
@@ -61,7 +62,6 @@ public class EyeOfSpider extends Boss {
 	public EntityWatcher createEntityWatcher(Entity boss) {
 		return new Watcher(this, boss);
 	}
-
 
 	@EventHandler(priority = EventPriority.LOW)
 	public void onEntityDamageByEntity(EntityDamageByEntityEvent event, EntityContext context) {

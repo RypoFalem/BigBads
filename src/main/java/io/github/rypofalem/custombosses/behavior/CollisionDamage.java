@@ -1,6 +1,7 @@
 package io.github.rypofalem.custombosses.behavior;
 
 
+import io.github.rypofalem.custombosses.CustomBossesPlugin;
 import io.github.rypofalem.custombosses.boss.BossWatcher;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,7 +21,7 @@ public class CollisionDamage implements TickableBehavior{
 	public void onTick(long tickCounter){
 		for(Entity e : watcher.getEntity().getNearbyEntities(range, range, range)){
 			if(!(e instanceof Player)) continue;
-			((Player) e).damage(damage, watcher.getEntity());
+			CustomBossesPlugin.damageEntityNotArmor(watcher.getEntity(), (Player) e, damage);
 		}
 	}
 }
