@@ -76,7 +76,7 @@ public class EyeMinion extends Minion implements TickableEntity {
 		}
 
 		public void onTick(){
-			if(getParent() == null || getParent().getEntity() == null){
+			if(getParent() == null || getParent().getEntity() == null || !getParent().getEntity().isValid()){
 				this.getEntity().remove();
 				return;
 			}
