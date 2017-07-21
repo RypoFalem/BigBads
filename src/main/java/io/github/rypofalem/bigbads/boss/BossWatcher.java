@@ -34,6 +34,7 @@ public abstract class BossWatcher implements EntityWatcher {
 	protected BossWatcher(CustomEntity customEntity, Entity entity){
 		this.customEntity = customEntity;
 		this.entity = entity;
+		entity.addScoreboardTag("ShowOnMiniMap");
 		createBossBar();
 		updateBossBar();
 		updateBossBarPlayers();
