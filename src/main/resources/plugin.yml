@@ -5,10 +5,6 @@ version: 0.1
 main: io.github.rypofalem.bigbads.BigBadsPlugin
 depend: [ Custom ]
 commands:
-  boss:
-    description: admin commands
-    usage: "/<command> spawn <bossname>"
-    permission: boss.admin
 permissions:
   boss.admin:
     description: admin stuff
